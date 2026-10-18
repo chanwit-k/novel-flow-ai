@@ -104,6 +104,11 @@ html{scroll-padding-top:94px}
 @media(max-width:1100px){.nc-panel{grid-template-columns:155px minmax(0,1fr);gap:24px}.nc-cover{max-width:155px}.nc-actions{grid-column:2;min-width:0;flex-direction:row;flex-wrap:wrap;justify-content:flex-start}.nc-actions .button{white-space:normal}}
 @media(max-width:720px){.nc-section{padding:48px 0}.nc-panel{grid-template-columns:1fr;padding:24px 20px;gap:20px}.nc-cover{max-width:215px}.nc-actions{grid-column:1;min-width:0;flex-direction:column}.nc-actions .button{width:100%}}
 @media(max-width:380px){.nc-cover{max-width:195px}}
+
+/* Better presentation for vertical YouTube Shorts, without affecting other videos. */
+.demo-item-short .demo-thumb img{object-fit:contain;background:#17141f}
+.demo-embed-frame.is-short{aspect-ratio:9/16;max-width:330px;margin-inline:auto}
+@media(max-width:760px){.demo-embed-frame.is-short{max-width:min(330px,100%)}}
 </style>
 </head>
 <body>
@@ -184,7 +189,23 @@ html{scroll-padding-top:94px}
        <p>ชมเนื้อหาสาธิตจากช่อง Chanwit K. ผ่าน YouTube ได้ที่นี่</p>
        <div class="demo-card-actions"><button class="button button-secondary button-sm" type="button" data-demo-play="3">▶ เล่นบนเว็บไซต์</button><a class="demo-watch-link" href="https://www.youtube.com/watch?v=YbFCBrzL1fU" target="_blank" rel="noopener noreferrer" aria-label="เปิดวิดีโอสาธิต 3 บน YouTube">เปิด YouTube ↗</a></div>
       </div>
-    </article></div>
+    </article>
+    <article class="demo-item" data-demo-index="4" data-video-url="https://youtu.be/RntbDS-lnuk?si=yF5K7In0o1f9UPFS">
+      <button class="demo-thumb" type="button" data-demo-play="4" aria-label="เลือกชมวิดีโอสาธิตตอนที่ 4"><img loading="lazy" decoding="async" alt="ภาพปกวิดีโอสาธิตตอนที่ 4" src="https://i.ytimg.com/vi/RntbDS-lnuk/hqdefault.jpg"><span class="demo-play" aria-hidden="true">▶</span></button>
+      <div class="demo-card-content"><span class="demo-card-meta">คลิปสาธิตจาก YouTube · 04</span>
+        <h3>เปลี่ยนนิยายในโปรแกรมให้เป็นละคร AI ภาพสวยเป๊ะ! แจกพร็อมท์จัดเต็ม | แอดพาทัวร์ EP.5</h3>
+        <div class="demo-card-actions"><button class="button button-secondary button-sm" type="button" data-demo-play="4">▶ เล่นบนเว็บไซต์</button><a class="demo-watch-link" href="https://youtu.be/RntbDS-lnuk?si=yF5K7In0o1f9UPFS" target="_blank" rel="noopener noreferrer" aria-label="เปิดวิดีโอสาธิต 4 บน YouTube">เปิด YouTube ↗</a></div>
+      </div>
+    </article>
+    <article class="demo-item demo-item-short" data-demo-index="5" data-video-url="https://youtube.com/shorts/91bjtEP9EGA?si=syu3t5dR4K_sTGza">
+      <button class="demo-thumb" type="button" data-demo-play="5" aria-label="เลือกชมวิดีโอ Shorts ตอนที่ 5"><img loading="lazy" decoding="async" alt="ภาพปก YouTube Shorts ตอนที่ 5" src="https://i.ytimg.com/vi/91bjtEP9EGA/hqdefault.jpg"><span class="demo-play" aria-hidden="true">▶</span><span class="demo-duration">Shorts</span></button>
+      <div class="demo-card-content"><span class="demo-card-meta">YouTube Shorts · 05</span>
+        <h3>แต่งนิยายเสร็จแล้ว อยากทำโปรโมท หรือ สร้างละคร AI แบบนี้ต่อ</h3>
+        <p>Novel Flow AI เรามีพร้อมท์ &quot;แจกฟรี&quot; พร้อมวิธีทำ ในกลุ่มสมาชิกนะครับ</p>
+        <div class="demo-card-actions"><button class="button button-secondary button-sm" type="button" data-demo-play="5">▶ เล่นบนเว็บไซต์</button><a class="demo-watch-link" href="https://youtube.com/shorts/91bjtEP9EGA?si=syu3t5dR4K_sTGza" target="_blank" rel="noopener noreferrer" aria-label="เปิดวิดีโอ Shorts ตอนที่ 5 บน YouTube">เปิด YouTube ↗</a></div>
+      </div>
+    </article>
+</div>
  <div class="demo-embed-shell" id="demo-player" aria-live="polite">
   <div class="demo-embed-frame" id="demo-embed-container"><iframe id="demo-iframe" title="เล่นวิดีโอสาธิตจาก YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
   <div class="demo-embed-details"><button type="button" class="demo-close" id="demo-close">✕ ปิดเครื่องเล่น</button><span class="demo-card-meta">กำลังชมวิดีโอ</span>
@@ -202,6 +223,8 @@ html{scroll-padding-top:94px}
   <div><label for="demo-url-1">วิดีโอสาธิต 1</label><input id="demo-url-1" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off"></div>
   <div><label for="demo-url-2">วิดีโอสาธิต 2</label><input id="demo-url-2" type="url" placeholder="https://youtu.be/..." autocomplete="off"></div>
   <div><label for="demo-url-3">วิดีโอสาธิต 3</label><input id="demo-url-3" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off"></div>
+    <div><label for="demo-url-4">วิดีโอสาธิต 4</label><input id="demo-url-4" type="url" placeholder="https://youtu.be/..." autocomplete="off"></div>
+    <div><label for="demo-url-5">YouTube Shorts 5</label><input id="demo-url-5" type="url" placeholder="https://youtube.com/shorts/..." autocomplete="off"></div>
   <p id="demo-editor-error" class="demo-error" role="status" aria-live="polite"></p>
   <div class="demo-editor-actions"><button class="button button-primary" type="submit">บันทึกและดาวน์โหลด HTML ↧</button><button type="button" class="button button-secondary" id="demo-editor-cancel">ยกเลิก</button></div>
  </form></div>
@@ -274,13 +297,14 @@ function setupCards(){
  notice.textContent=playable===cards.length?'เลือกคลิปที่สนใจเพื่อเล่นวิดีโอบนเว็บไซต์ได้ทันที':
    (playable?'เลือกเล่นวิดีโอที่เชื่อมลิงก์แล้ว หรือดูรายการอื่นจากช่อง YouTube':'ดูภาพปกและชื่อวิดีโอตัวอย่าง หากต้องการชมคลิปโปรดเปิดช่อง YouTube');
 }
-function closePlayer(){frame.removeAttribute('src');player.classList.remove('show');cards.forEach(c=>c.classList.remove('active'));}
+function closePlayer(){frame.removeAttribute('src');frame.parentElement.classList.remove('is-short');player.classList.remove('show');cards.forEach(c=>c.classList.remove('active'));}
 function playVideo(index){
  const card=cards[index-1];if(!card)return;
  const id=parseYouTubeId(card.dataset.videoUrl||'');
  if(!id){window.open(channel,'_blank','noopener,noreferrer');return;}
  const current=player.classList.contains('show')?frame.getAttribute('src'):null;
  const next='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0';
+ frame.parentElement.classList.toggle('is-short', card.classList.contains('demo-item-short'));
  frame.setAttribute('src',next);
  title.textContent=card.querySelector('h3').textContent;
  details.textContent=card.querySelector('.demo-card-content p').textContent;
